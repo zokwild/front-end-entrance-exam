@@ -1,96 +1,1353 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	.invoice-box {
+		max-width: 800px;
+		margin: auto;
+		font-size: 16px;
+		line-height: 24px;
+		font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+		color: #555;
+	}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	.invoice-box table {
+		width: 100%;
+		line-height: inherit;
+		text-align: left;
+	}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+	.invoice-box table td {
+		padding: 5px;
+		vertical-align: top;
+	}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+	.invoice-box table tr td:nth-child(2) {
+		text-align: right;
+	}
 
-body {
-  margin: 0;
+	.invoice-box table tr.top table td {
+		padding-bottom: 20px;
+	}
+
+	.invoice-box table tr.top table td.title {
+		font-size: 45px;
+		line-height: 45px;
+		color: #333;
+	}
+
+	.invoice-box table tr.information table td {
+		padding-bottom: 40px;
+	}
+
+	.invoice-box table tr.heading td {
+		background: #eee;
+		border-bottom: 1px solid #ddd;
+		font-weight: bold;
+	}
+
+	.invoice-box table tr.details td {
+		padding-bottom: 20px;
+	}
+
+	.invoice-box table tr.item td {
+		border-bottom: 1px solid #eee;
+	}
+
+	.invoice-box table tr.item.last td {
+		border-bottom: none;
+	}
+
+	.invoice-box table tr.total td:nth-child(2) {
+		border-top: 2px solid #eee;
+		font-weight: bold;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.invoice-box table tr.top table td {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+
+		.invoice-box table tr.information table td {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	/** RTL **/
+	.invoice-box.rtl {
+		direction: rtl;
+		font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+	}
+
+	.invoice-box.rtl table {
+		text-align: right;
+	}
+
+	.invoice-box.rtl table tr td:nth-child(2) {
+		text-align: left;
+	}
+	
+	
+.CV {
+  background-color: #ffffff;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.CV .CV-v {
+  background-color: #ffffff;
+  width: 595.0px;
+  height: 842.0px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.CV .bento-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 605px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 20px;
+  position: relative;
+  top: 15px;
+  left: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.CV .profile-img {
+  position: relative;
+  width: 124px;
+  height: 124px;
+  border-radius: 12px;
+  background: url(https://c.animaapp.com/mdf0no5mEH2kqW/img/profileimg.png) 50%
+    50% / cover;
 }
 
-.card {
-  padding: 2em;
+.CV .name-box {
+  display: flex;
+  flex-direction: column;
+  width: 124px;
+  height: 124px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.CV .text-wrapper {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.CV .your-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .name {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 14.6px;
+}
+
+.CV .role {
+  position: relative;
+  align-self: stretch;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #5c5c5c;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.CV .lenguages-box {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  height: 124px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.CV .title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.CV .list-lenguages {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .name-lenguage {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.CV .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -15.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 10.4px;
+  white-space: nowrap;
+}
+
+.CV .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 10.4px;
+  white-space: nowrap;
+}
+
+.CV .level-lenguage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.CV .div-2 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 11px;
+  background-color: #28d979;
+  border-radius: 3px;
+}
+
+.CV .english-progress-bar {
+  position: relative;
+  width: 129px;
+  height: 11px;
+  background-color: #28d979;
+  border-radius: 3px;
+}
+
+.CV .experience-box {
+  display: flex;
+  flex-direction: column;
+  width: 411px;
+  height: 503px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.CV .job-list {
+  gap: 10px;
+  align-self: stretch;
+  width: 96%;
+  flex: 0 0 auto;
+  margin-bottom: -2.00px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.CV .last-job {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #27d879;
+  border-radius: 10px;
+}
+
+.CV .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .date {
+  color: #ffffff;
+  font-size: 8px;
+  line-height: 12px;
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.CV .tag {
+  display: flex;
+  width: 61px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 2px 0px;
+  position: relative;
+  background-color: #7e731266;
+  border-radius: 59px;
+}
+
+.CV .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #dcf063;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12.4px;
+  white-space: nowrap;
+}
+
+.CV .content {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .job-info {
+  width: 124px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.CV .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.CV .about-job {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 6px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: -2px;
+}
+
+.CV .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ebf9f1;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .featured-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.CV .points {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.CV .job {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.CV .date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .date-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .info {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #3f3d3d;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .p {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.CV .company-name {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #3f3c3c;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .text-wrapper-7 {
+  color: #000000;
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .tools-box {
+  position: relative;
+  width: 124px;
+  height: 503px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.CV .frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: absolute;
+  top: 48px;
+  left: 24px;
+}
+
+.CV .content-2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 76px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 16px 4px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .logo-figma {
+  position: relative;
+  width: 10px;
+  height: 15px;
+}
+
+.CV .vector {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 5px;
+  left: 5px;
+}
+
+.CV .img {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 10px;
+  left: 0;
+}
+
+.CV .vector-2 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 0;
+  left: 5px;
+}
+
+.CV .vector-3 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 0;
+  left: 0;
+}
+
+.CV .vector-4 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 5px;
+  left: 0;
+}
+
+.CV .group-wrapper {
+  position: relative;
+  width: 14.76px;
+  height: 14.76px;
+  background-image: url(https://c.animaapp.com/mdf0no5mEH2kqW/img/vector-1.svg);
+  background-size: 100% 100%;
+}
+
+.CV .group {
+  position: relative;
+  width: 9px;
+  height: 7px;
+  top: 4px;
+  left: 3px;
+}
+
+.CV .vector-5 {
+  position: absolute;
+  width: 5px;
+  height: 7px;
+  top: 0;
+  left: 0;
+}
+
+.CV .vector-6 {
+  position: absolute;
+  width: 4px;
+  height: 5px;
+  top: 2px;
+  left: 5px;
+}
+
+.CV .group-2 {
+  position: relative;
+  width: 8px;
+  height: 7px;
+  top: 4px;
+  left: 3px;
+}
+
+.CV .vector-7 {
+  position: absolute;
+  width: 6px;
+  height: 7px;
+  top: 1px;
+  left: 0;
+}
+
+.CV .vector-8 {
+  position: absolute;
+  width: 2px;
+  height: 7px;
+  top: 0;
+  left: 7px;
+}
+
+.CV .vector-9 {
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  top: 2px;
+  left: 5px;
+}
+
+.CV .logo-notion {
+  position: relative;
+  width: 17px;
+  height: 17.72px;
+  background-image: url(https://c.animaapp.com/mdf0no5mEH2kqW/img/vector-3.svg);
+  background-size: 100% 100%;
+}
+
+.CV .logo-meet {
+  position: relative;
+  width: 19.5px;
+  height: 15.95px;
+}
+
+.CV .overlap {
+  width: 16px;
+  left: 0;
+  position: absolute;
+  height: 16px;
+  top: 0;
+}
+
+.CV .overlap-group {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 11px;
+  left: 0;
+}
+
+.CV .vector-10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 3px;
+  left: 0;
+}
+
+.CV .overlap-2 {
+  width: 11px;
+  left: 4px;
+  position: absolute;
+  height: 16px;
+  top: 0;
+}
+
+.CV .vector-11 {
+  position: absolute;
+  width: 11px;
+  height: 8px;
+  top: 0;
+  left: 0;
+}
+
+.CV .vector-12 {
+  position: absolute;
+  width: 11px;
+  height: 8px;
+  top: 8px;
+  left: 0;
+}
+
+.CV .vector-13 {
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  top: 4px;
+  left: 7px;
+}
+
+.CV .vector-14 {
+  position: absolute;
+  width: 5px;
+  height: 7px;
+  top: 5px;
+  left: 0;
+}
+
+.CV .vector-15 {
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  top: 2px;
+  left: 16px;
+}
+
+.CV .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  left: 23px;
+  background-color: #000000;
+  border-radius: 59px;
+}
+
+.CV .text-wrapper-8 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 7.1px;
+  white-space: nowrap;
+}
+
+.CV .content-3 {
+  width: 85px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .tag-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 6px;
+  position: absolute;
+  top: 118px;
+  left: 21px;
+  background-color: #000000;
+  border-radius: 59px;
+}
+
+.CV .content-4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 76px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 16px 4px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .img-2 {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  object-fit: cover;
+}
+
+.CV .logocopilot {
+  position: relative;
+  width: 18px;
+  height: 19px;
+  object-fit: cover;
+}
+
+.CV .logomidjourney {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  margin-top: -23.05px;
+  margin-right: -155.00px;
+  object-fit: cover;
+}
+
+.CV .tag-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 6px;
+  position: absolute;
+  top: 216px;
+  left: 5px;
+  background-color: #000000;
+  border-radius: 59px;
+}
+
+.CV .name-title-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.CV .div-wrapper-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .education-box {
+  display: flex;
+  flex-direction: column;
+  width: 268px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.CV .content-5 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-right: -4.00px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .column {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .last-education {
+  width: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #27d879;
+  border-radius: 10px;
+}
+
+.CV .vector-16 {
+  position: relative;
+  width: 11px;
+  height: 9.39px;
+}
+
+.styleList {
+  list-style-type: none;
+}
+
+.CV .content-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: -2px;
+}
+
+.CV .tag-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ebf9f1;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .school-name {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .education {
+  display: flex;
+  flex-direction: column;
+  width: 99px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.CV .text-wrapper-9 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.CV .vector-17 {
+  position: relative;
+  width: 11px;
+  height: 9.39px;
+  margin-top: -305.00px;
+  margin-right: -554.00px;
+}
+
+.CV .tag-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #148f63;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .tag-6 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #148f63;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .school-name-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.CV .like-button {
+  position: relative;
+  width: 11px;
+  height: 9.39px;
+  margin-top: -173.00px;
+  margin-right: -422.00px;
+}
+
+.CV .extra-box {
+  display: inline-flex;
+  flex-direction: column;
+  height: 405px;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .interests-box {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.CV .content-7 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 8px;
+  align-self: stretch;
+  width: 100%;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.CV .name-wrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 10px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 40px;
+}
+
+.CV .name-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.CV .input {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 10px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 40px;
+  border: none;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.CV .contact {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  background-color: #000000;
+  border-radius: 12px;
+}
+
+.CV .title-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  color: white;
+  flex: 0 0 auto;
+}
+
+.CV .name-title {
+  align-self: stretch;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 21px;
+  position: relative;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  letter-spacing: 0;
+}
+
+.CV .title-3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.CV .name-title-2 {
+  width: fit-content;
+  font-weight: 400;
+  color: #dddddd;
+  font-size: 10px;
+  line-height: 15px;
+  white-space: nowrap;
+  position: relative;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  letter-spacing: 0;
+}
+/* Original CSS code should be injected here */
+
+/* Additional CSS for accessibility and semantic improvements */
+.CV {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-img {
+  width: 124px;
+  height: 124px;
+  object-fit: cover;
+}
+
+.name-box,
+.lenguages-box,
+.experience-box,
+.tools-box,
+.education-box,
+.interests-box,
+.contact {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.name-box h1,
+.lenguages-box h2,
+.experience-box h2,
+.tools-box h2,
+.education-box h2,
+.interests-box h2,
+.contact h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.job-list article,
+.education article {
+  margin-bottom: 10px;
+}
+
+.featured-points,
+.tags {
+  padding-left: 20px;
+}
+
+.featured-points li,
+.tags li {
+  margin-bottom: 5px;
+}
+
+.name-wrapper {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 4px 10px;
+  margin: 4px;
+}
+
+.contact a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+.contact a:hover,
+.contact a:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .bento-flexbox {
+    flex-direction: column;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .profile-img,
+  .name-box,
+  .lenguages-box,
+  .experience-box,
+  .tools-box,
+  .education-box,
+  .interests-box,
+  .contact {
+    width: 100%;
   }
 }
+
+.ripple-container {
+  position: relative; /* Essential for positioning the ripple */
+  overflow: hidden; /* Hides the ripple outside the container */
+  display: inline-block; /* Or block, depending on layout */
+}
+
+.ripple-input {
+  /* Basic styling for your input */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2); /* Ripple color and transparency */
+  transform: scale(0); /* Initially hidden */
+  opacity: 0;
+  animation: ripple-animation 0.6s ease-out forwards; /* Animation definition */
+}
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2); /* Adjust scale for ripple size */
+    opacity: 0;
+  }
+}
+
+
+
